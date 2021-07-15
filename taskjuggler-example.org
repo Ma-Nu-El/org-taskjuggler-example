@@ -1,0 +1,166 @@
+#+TITLE: TaskJuggler (TJ) org file example (noob friendly)
+#+subtitle: extract from =orgmode.org/worg/org-tutorials/org-taskjuggler.org=
+#+PROPERTY: Effort_ALL 2d 5d 10d 20d 30d 35d 50d
+#+PROPERTY: allocate_ALL dev doc test
+#+COLUMNS: %30ITEM(Task) %Effort %allocate %BLOCKER %ORDERED
+#+author: Manuel Fuica Morales - [[mailto:manuel.fuica.morales@gmail.com][manuel.fuica.morales@gmail.com]]
+#+date: 15 July 2021
+#+options: toc:2
+
+* TOC :TOC_2:noexport:
+- [[#accounting-software][Accounting Software]]
+  - [[#specification][Specification]]
+  - [[#software-development][Software Development]]
+  - [[#software-testing][Software testing]]
+  - [[#manual][Manual]]
+  - [[#milestones][Milestones]]
+- [[#resources][Resources]]
+  - [[#developers][Developers]]
+  - [[#others][Others]]
+- [[#about-noob-friendly-part][About (noob friendly part)]]
+
+* Accounting Software                           :taskjuggler_project:
+** Specification
+:PROPERTIES:
+:Effort:   20d
+:BLOCKER:  start
+:allocate: dev
+:END:
+
+** Software Development
+:PROPERTIES:
+:ORDERED:  t
+:BLOCKER:  previous-sibling
+:priority: 1000
+:allocate: dev
+:END:
+
+*** Database coupling
+:PROPERTIES:
+:Effort:   20d
+:END:
+
+*** Back-End Functions
+:PROPERTIES:
+:Effort:   30d
+:task_id:  back_end
+:END:
+
+*** Graphical User Interface
+:PROPERTIES:
+:Effort:   35d
+:allocate: paul, seb
+:END:
+
+** Software testing
+:PROPERTIES:
+:ORDERED:  t
+:BLOCKER:  previous-sibling
+:allocate: test
+:END:
+*** Alpha Test
+:PROPERTIES:
+:Effort:   5d
+:task_id:  alpha
+:END:
+
+*** Beta Test
+:PROPERTIES:
+:Effort:   20d
+:task_id:  beta
+:allocate: test, paul
+:END:
+
+** Manual
+:PROPERTIES:
+:Effort:   50d
+:task_id:  manual
+:BLOCKER:  start
+:allocate: doc
+:END:
+
+** Milestones
+*** Project start
+:PROPERTIES:
+:task_id:  start
+:END:
+
+*** Technology Preview
+:PROPERTIES:
+:BLOCKER:  back_end
+:END:
+
+*** Beta version
+:PROPERTIES:
+:BLOCKER:  alpha
+:END:
+
+*** Ship Product to Customer
+:PROPERTIES:
+:BLOCKER:  beta manual
+:END:
+* Resources :taskjuggler_resource:
+** Developers
+:PROPERTIES:
+:resource_id: dev
+:END:
+*** Paul Smith
+:PROPERTIES:
+:resource_id: paul
+:END:
+*** Sébastien Bono
+:PROPERTIES:
+:resource_id: seb
+:END:
+*** Klaus Müller
+
+** Others
+*** Peter Murphy
+:PROPERTIES:
+:resource_id: doc
+:limits:   { dailymax 6.4h }
+:END:
+*** Dim Sung
+:PROPERTIES:
+:resource_id: test
+:END:
+* About (noob friendly part)
+
+From
+
+- [[https://orgmode.org/worg/org-tutorials/org-taskjuggler.html]]
+
+
+Check the source code and near the end of the document there is a
+complete =#+begin_src org= source block that I copied into its own file
+(this one) and used =org-taskjuggler-export-process-and-open= orgmode's export
+capabilities to generate the =reports/Plan.html= file.
+
+|        <c>        |   <c>   | <l>                                   |
+|-------------------+---------+---------------------------------------|
+|      Program      | Version | Command                               |
+|-------------------+---------+---------------------------------------|
+|      Orgmode      |   9.5   | =M-x org-version= (from within emacs) |
+|       Emacs       |  27.1   | =emacs --version= (from terminal)     |
+|    Doom Emacs     |  3.0.0  | =doom --version= (from terminal)      |
+| tj3 (TaskJuggler) |  3.6.0  | =tj3 --version= (from terminal)       |
+|-------------------+---------+---------------------------------------|
+Fetched: [2021-07-15 Thu]
+
+Notice that if you don't have TaskJuggler installed (=tj3= in this case) then
+Emacs will generate an empty =reports= directory. =tj3= actually populates
+that =reports= directory according to the information in your =.org= file.
+
+For =Doom Emacs= users
+- There's /no/ particular =flag= nor =module= you have to enable
+  (well obviously =:lang org= in =~/.doom.d/init.el=, but that is taken
+  as granted).
+
+For Ubuntu users it'll be
+
+- =sudo apt install tj3=
+- or you can search it
+  + =apt search taskjuggler=
+
+
+and wing it from there.
