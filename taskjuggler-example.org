@@ -7,6 +7,9 @@
 #+date: 15 July 2021
 #+options: toc:2
 
+# Local copy
+# [[file:~/txt/worg/org-tutorials/taskjuggler-example.org][[[file:~/txt/worg/org-tutorials/taskjuggler-example.org]]]]
+
 * TOC :TOC_2:noexport:
 - [[#accounting-software][Accounting Software]]
   - [[#specification][Specification]]
@@ -19,7 +22,7 @@
   - [[#others][Others]]
 - [[#about-noob-friendly-part][About (noob friendly part)]]
 
-* Accounting Software                           :taskjuggler_project:
+* Accounting Software :taskjuggler_project:
 ** Specification
 :PROPERTIES:
 :Effort:   20d
