@@ -1,4 +1,4 @@
-project nil "Accounting Software" "1.0" 2021-07-15 +280d {
+project nil "Accounting Software" "1.0" 2021-07-23 +280d {
 }
 shift s40 "Part time shift" {
   workinghours wed, thu, fri off

@@ -7,8 +7,8 @@
 #+date: 15 July 2021
 #+options: toc:2
 
-# Local copy
-# [[file:~/txt/worg/org-tutorials/taskjuggler-example.org][[[file:~/txt/worg/org-tutorials/taskjuggler-example.org]]]]
+# Local source copy
+# [[file:~/txt/worg/org-tutorials/org-taskjuggler.org]]
 
 * TOC :TOC_2:noexport:
 - [[#accounting-software][Accounting Software]]
